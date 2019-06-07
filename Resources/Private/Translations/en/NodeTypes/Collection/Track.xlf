@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.setFirstTrackToDefault" xml:space="preserve">
+                <source>Set first track as default</source>
+                <target>Set first track as default</target>
+            </trans-unit>
+            <trans-unit id="properties.setFirstTrackToDefault.ui.help.message" xml:space="preserve">
+                <source>If set, the first track will be enabled unless the user's preferences indicate that another track is more appropriate.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,30 @@
+'Jonnitto.PrettyEmbedVideo:Mixin.Sources':
+  superTypes:
+    'Jonnitto.PrettyEmbedVideo:Mixin.Assets': true
+    'Jonnitto.PrettyEmbedVideo:Mixin.ExternalSources': true
+  abstract: true
+  properties:
+    external:
+      type: boolean
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: sources
+          position: 10
+    assets:
+      ui:
+        inspector:
+          hidden: 'ClientEval:node.properties.external'
+    externalMp4:
+      ui:
+        inspector:
+          hidden: 'ClientEval:node.properties.external ? false : true'
+    externalWebm:
+      ui:
+        inspector:
+          hidden: 'ClientEval:node.properties.external ? false : true'
+    externalOgg:
+      ui:
+        inspector:
+          hidden: 'ClientEval:node.properties.external ? false : true'

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.assets" xml:space="preserve">
+                <source>Internal videos</source>
+                <target>Internal videos</target>
+            </trans-unit>
+            <trans-unit id="properties.assets.ui.help.message" xml:space="preserve">
+                <source>The asssets must be `.mp4`, `.webm` or `.ogg` files. Other filetypes will be ignored.</source>
+                <target>The asssets must be `.mp4`, `.webm` or `.ogg` files. Other filetypes will be ignored.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

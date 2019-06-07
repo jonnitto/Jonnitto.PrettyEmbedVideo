@@ -1,0 +1,48 @@
+{
+    "name": "jonnitto/prettyembedvideo",
+    "type": "neos-plugin",
+    "license": "GPL-3.0-or-later",
+    "description": "Prettier embeds for your videos in Neos CMS - with nice options like high-res preview images and advanced customisation of embed options.",
+    "keywords": [
+        "flow",
+        "neos",
+        "video",
+        "contentelement"
+    ],
+    "support": {
+        "issues": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/issues",
+        "source": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo"
+    },
+    "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo",
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://twitter.com/jonnitto",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "jonnitto/prettyembedhelper": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jonnitto\\PrettyEmbedVideo\\": "Classes"
+        }
+    },
+    "archive": {
+        "exclude": [
+            ".gitattributes",
+            ".gitignore",
+            ".github",
+            "CODE_OF_CONDUCT.md"
+        ]
+    },
+    "extra": {
+        "marketplace-account": "me@jonnitto.ch",
+        "installer-name": "Jonnitto.PrettyEmbedVideo",
+        "neos": {
+            "package-key": "Jonnitto.PrettyEmbedVideo"
+        }
+    }
+}

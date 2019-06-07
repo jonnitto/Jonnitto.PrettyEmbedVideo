@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.externalMp4" xml:space="preserve">
+                <source>MP4 videos</source>
+                <target>MP4 videos</target>
+            </trans-unit>
+            <trans-unit id="properties.externalWebm" xml:space="preserve">
+                <source>WebM videos</source>
+                <target>WebM videos</target>
+            </trans-unit>
+            <trans-unit id="properties.externalOgg" xml:space="preserve">
+                <source>Ogg videos</source>
+                <target>Ogg videos</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

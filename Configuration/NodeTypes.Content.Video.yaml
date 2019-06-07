@@ -1,0 +1,20 @@
+'Jonnitto.PrettyEmbedVideo:Content.Video':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Groups': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.IncludeAssets': true
+    'Jonnitto.PrettyEmbedVideo:Mixin.Sources': true
+    'Jonnitto.PrettyEmbedVideo:Collection.Track': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Title': true
+    
+    'Jonnitto.PrettyEmbedHelper:Mixin.Controls': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Autoplay': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Mute': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Loop': true
+  ui:
+    label: i18n
+    icon: 'fas fa-video'
+    position: 900
+

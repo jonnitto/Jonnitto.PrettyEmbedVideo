@@ -1,0 +1,42 @@
+prototype(Jonnitto.PrettyEmbedVideo:Component.Backend) < prototype(Neos.Fusion:Component) {
+    identifier = ${q(node).property('_identifier')}
+    setFirstTrackToDefault = null
+
+    @context.setFirstTrackToDefault = ${this.setFirstTrackToDefault}
+
+    @if.render = ${node.context.inBackend}
+
+    renderer = afx`
+        <input class='jonnitto-prettyembedbackend__checkbox' id={'checkbox-' + props.identifier} type='checkbox' />
+        <label class='jonnitto-prettyembedbackend__label' for={'checkbox-' + props.identifier}>
+            <span class='jonnitto-prettyembedbackend__show'>
+                {Translation.translate('show', 'Show tracks', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+            </span>
+            <span class='jonnitto-prettyembedbackend__hide'>
+                {Translation.translate('hide', 'Hide tracks', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+            </span>
+        </label>
+        <table class='jonnitto-prettyembedbackend__table'>
+            <thead>
+                <tr>
+                    <th>
+                        {Translation.translate('properties.src', 'File', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+                    </th>
+                    <th>
+                        {Translation.translate('properties.kind', 'Type', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+                    </th>
+                    <th>
+                        {Translation.translate('properties.label', 'Label', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+                    </th>
+                    <th class='jonnitto-prettyembedbackend__center'>
+                        {Translation.translate('properties.srclang', 'Language', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+                    </th>
+                    <th>
+                        {Translation.translate('default', 'Default', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+                    </th>
+                </tr>
+            </thead>
+            <Neos.Neos:ContentCollection tagName='tbody' nodePath='' />
+        </table>
+    `
+}

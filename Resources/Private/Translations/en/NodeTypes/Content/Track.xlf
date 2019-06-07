@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Captions</source>
+                <target>Captions</target>
+            </trans-unit>
+            <trans-unit id="groups.track" xml:space="preserve">
+                <source>Captions</source>
+                <target>Captions</target>
+            </trans-unit>
+            <trans-unit id="properties.kind" xml:space="preserve">
+                <source>Type</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.ui.help.message" xml:space="preserve">
+                <source>
+### Subtitles
+Subtitles provide translation of content that cannot be understood by the viewer. For example dialogue or text that is not English in an English language film. They may also contain additional content, usually extra background information. For example the text at the beginning of the Star Wars films, or the date, time, and location of a scene.
+
+### Captions
+Closed captions provide a transcription and possibly a translation of audio. It may include important non-verbal information such as music cues or sound effects. It may indicate the cue's source (e.g. music, text, character). **Suitable for users who are deaf or when the sound is muted.**
+
+### Descriptions
+Textual description of the video content. **Suitable for users who are blind or where the video cannot be seen.**
+
+### Chapters titles
+Chapter titles are intended to be used when the user is navigating the media resource.
+
+### Metadata
+Tracks used by scripts. Not visible to the user.</source>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.subtitles" xml:space="preserve">
+                <source>Subtitles</source>
+                <target>Subtitles</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.captions" xml:space="preserve">
+                <source>Captions</source>
+                <target>Captions</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.descriptions" xml:space="preserve">
+                <source>Descriptions</source>
+                <target>Descriptions</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.chapters" xml:space="preserve">
+                <source>Chapters titles</source>
+                <target>Chapters titles</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.metadata" xml:space="preserve">
+                <source>Metadata</source>
+                <target>Metadata</target>
+            </trans-unit>
+            <trans-unit id="properties.label" xml:space="preserve">
+                <source>Label</source>
+                <target>Label</target>
+            </trans-unit>
+            <trans-unit id="properties.label.ui.help.message" xml:space="preserve">
+                <source>A user-readable title of the text track which is used by the browser when listing available text tracks</source>
+                <target>A user-readable title of the text track which is used by the browser when listing available text tracks</target>
+            </trans-unit>
+            <trans-unit id="properties.src" xml:space="preserve">
+                <source>File</source>
+                <target>File</target>
+            </trans-unit>
+            <trans-unit id="properties.src.ui.help.message" xml:space="preserve">
+                <source>Must be an `.vtt` file. Other filetypes will be ignored.</source>
+                <target>Must be an `.vtt` file. Other filetypes will be ignored.</target>
+            </trans-unit>
+            <trans-unit id="properties.srclang" xml:space="preserve">
+                <source>Language</source>
+                <target>Language</target>
+            </trans-unit>
+            <trans-unit id="properties.srclang.ui.help.message" xml:space="preserve">
+                <source>Language of the track text data. If the kind attribute is set to Subtitles, then it must be defined.</source>
+                <target>Language of the track text data. If the kind attribute is set to Subtitles, then it must be defined.</target>
+            </trans-unit>
+            <trans-unit id="show" xml:space="preserve">
+                <source>Show tracks</source>
+                <target>Show tracks</target>
+            </trans-unit>
+            <trans-unit id="hide" xml:space="preserve">
+                <source>Hide tracks</source>
+                <target>Hide tracks</target>
+            </trans-unit>
+            <trans-unit id="default" xml:space="preserve">
+                <source>Default</source>
+                <target>Default</target>
+            </trans-unit>
+            <trans-unit id="needSrclang" xml:space="preserve">
+                <source>The language need to be set</source>
+                <target>The language need to be set</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

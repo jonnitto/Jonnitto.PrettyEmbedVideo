@@ -1,0 +1,55 @@
+prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Component) {
+    configuration = ${Configuration.setting('Jonnitto.PrettyEmbedVideo')}
+
+    lightbox = ${this.configuration.defaults.lightbox}
+    autoplay = ${this.configuration.defaults.autoplay}
+    controls = ${this.configuration.defaults.controls}
+    loop = ${this.configuration.defaults.loop}
+    muted = ${this.configuration.defaults.muted}
+    preload = ${this.configuration.defaults.preload}
+    playsinline = ${this.configuration.defaults.playsinline}
+    crossorigin = ${this.configuration.defaults.crossorigin}
+
+    wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
+
+    width = null
+    height = null
+
+    id = null
+
+    poster = null
+
+    sources = null
+    tracks = null
+    content = ${(Type.isString(this.sources) ? this.sources : '') + (Type.isString(this.tracks) ? this.tracks : '')}
+
+    // Internal
+    type = ${this.lightbox ? 'lightbox' : 'inline'}
+    setAutoplay = ${this.lightbox ? null : this.autoplay}
+
+    renderer = afx`
+        <div class={BEM.string('jonnitto-prettyembed', null, {video: true, type: props.type, autoplay: props.setAutoplay})}>
+            <video
+                id={props.id}
+                data-controls={props.controls}
+                autoplay={props.setAutoplay}
+                loop={props.loop}
+                muted={props.muted || props.setAutoplay}
+                preload={props.preload}
+                playsinline={props.playsinline}
+                poster={props.poster}
+                crossorigin={props.crossorigin}
+                width={props.width}
+                height={props.height}
+            >
+                {props.content}
+            </video>
+            <img @if.set={props.poster} src={props.poster} />
+        </div>
+    `
+    renderer.@process.wrapper = Neos.Fusion:Tag {
+        @if.render = ${props.wrapper}
+        attributes.class = ${Type.isString(props.wrapper) ? props.wrapper : null}
+        content = ${value}
+    }
+}

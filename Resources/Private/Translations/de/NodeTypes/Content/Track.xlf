@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Captions</source>
+                <target>Untertitel</target>
+            </trans-unit>
+            <trans-unit id="groups.track" xml:space="preserve">
+                <source>Captions</source>
+                <target>Untertitel</target>
+            </trans-unit>
+            <trans-unit id="properties.kind" xml:space="preserve">
+                <source>Type</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.subtitles" xml:space="preserve">
+                <source>Subtitles</source>
+                <target>Untertitel audiomediale Inhalte</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.captions" xml:space="preserve">
+                <source>Captions</source>
+                <target>Untertitel visuelle Medieninhalte</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.descriptions" xml:space="preserve">
+                <source>Descriptions</source>
+                <target>Beschreibungen (descriptions)</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.chapters" xml:space="preserve">
+                <source>Chapters titles</source>
+                <target>Kapiteltitel</target>
+            </trans-unit>
+            <trans-unit id="properties.kind.selectBoxEditor.values.metadata" xml:space="preserve">
+                <source>Metadata</source>
+                <target>Metadata</target>
+            </trans-unit>
+            <trans-unit id="properties.label" xml:space="preserve">
+                <source>Label</source>
+                <target>Label</target>
+            </trans-unit>
+            <trans-unit id="properties.src" xml:space="preserve">
+                <source>File</source>
+                <target>Datei</target>
+            </trans-unit>
+            <trans-unit id="properties.srclang" xml:space="preserve">
+                <source>Language</source>
+                <target>Sprache</target>
+            </trans-unit>
+            <trans-unit id="show" xml:space="preserve">
+                <source>Show tracks</source>
+                <target>Zeige Untertitel</target>
+            </trans-unit>
+            <trans-unit id="hide" xml:space="preserve">
+                <source>Hide tracks</source>
+                <target>Blende Untertitel aus</target>
+            </trans-unit>
+            <trans-unit id="default" xml:space="preserve">
+                <source>Default</source>
+                <target>Standard</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,31 @@
+prototype(Jonnitto.PrettyEmbedVideo:Content.Track) < prototype(Neos.Neos:ContentComponent) {
+    contentElement = true
+
+    node = ${node}
+    asset = ${q(this.node).property('src')}
+    kind = ${q(this.node).property('kind')}
+    label = ${q(this.node).property('label')}
+    srclang = ${q(this.node).property('srclang')}
+    default = ${iterator.isFirst && setFirstTrackToDefault}
+
+    // Internal
+    needSrclang = ${this.kind == 'subtitles' && !this.srclang}
+
+    renderer = afx`
+        <Jonnitto.PrettyEmbedVideo:Component.Track @if.set={!props.contentElement} {...props} />
+        <tr @if.set={props.contentElement && node.context.inBackend}>
+            <td>{props.asset ? props.asset.resource.filename : ''}</td>
+            <td>
+                {Translation.translate('properties.kind.selectBoxEditor.values.' + props.kind, String.firstLetterToUpperCase(props.kind), [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo')}
+            </td>
+            <td>{props.label}</td>
+            <td class={['jonnitto-prettyembedbackend__center', props.needSrclang ? 'jonnitto-prettyembedbackend__error' : null]}>
+                {props.needSrclang ? Translation.translate('needSrclang', 'The language need to be set', [], 'NodeTypes/Content/Track', 'Jonnitto.PrettyEmbedVideo') : props.srclang}
+            </td>
+            <td>{props.default ? '✓' : ''}</td>
+        </tr>
+    `
+
+    @context.contentElement = ${this.contentElement}
+    @process.contentElementWrapping.@if.contentElementWrapping = ${contentElement}
+}
