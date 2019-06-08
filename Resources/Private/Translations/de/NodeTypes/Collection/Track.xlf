@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.setFirstTrackToDefault" xml:space="preserve">
+                <source>Set first caption as default</source>
+                <target>Ersten Untertitel ist Standarduntertitel</target>
+            </trans-unit>
+            <trans-unit id="properties.setFirstTrackToDefault.ui.help.message" xml:space="preserve">
+                <source>If set, the first caption will be enabled unless the user's preferences indicate that another one is more appropriate.</source>
+                <target>Falls dies gesetzt ist, wird der erste Untertitel aktiviert, solange nicht die Benutzereinstellungen so gesetzt ist, das ein anderer Untertitel besser passt.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
