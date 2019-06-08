@@ -4,11 +4,12 @@
     <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="en" datatype="plaintext">
         <body>
             <trans-unit id="properties.setFirstTrackToDefault" xml:space="preserve">
-                <source>Set first track as default</source>
-                <target>Set first track as default</target>
+                <source>Set first caption as default</source>
+                <target>Set first caption as default</target>
             </trans-unit>
             <trans-unit id="properties.setFirstTrackToDefault.ui.help.message" xml:space="preserve">
-                <source>If set, the first track will be enabled unless the user's preferences indicate that another track is more appropriate.</source>
+                <source>If set, the first caption will be enabled unless the user's preferences indicate that another one is more appropriate.</source>
+                <target>If set, the first caption will be enabled unless the user's preferences indicate that another one is more appropriate.</target>
             </trans-unit>
         </body>
     </file>

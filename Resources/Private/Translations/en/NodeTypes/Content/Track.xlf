@@ -31,6 +31,21 @@ Chapter titles are intended to be used when the user is navigating the media res
 
 ### Metadata
 Tracks used by scripts. Not visible to the user.</source>
+                <target>
+### Subtitles
+Subtitles provide translation of content that cannot be understood by the viewer. For example dialogue or text that is not English in an English language film. They may also contain additional content, usually extra background information. For example the text at the beginning of the Star Wars films, or the date, time, and location of a scene.
+
+### Captions
+Closed captions provide a transcription and possibly a translation of audio. It may include important non-verbal information such as music cues or sound effects. It may indicate the cue's source (e.g. music, text, character). **Suitable for users who are deaf or when the sound is muted.**
+
+### Descriptions
+Textual description of the video content. **Suitable for users who are blind or where the video cannot be seen.**
+
+### Chapters titles
+Chapter titles are intended to be used when the user is navigating the media resource.
+
+### Metadata
+Tracks used by scripts. Not visible to the user.</target>
             </trans-unit>
             <trans-unit id="properties.kind.selectBoxEditor.values.subtitles" xml:space="preserve">
                 <source>Subtitles</source>
