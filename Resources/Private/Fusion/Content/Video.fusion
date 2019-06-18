@@ -1,15 +1,6 @@
-prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Neos.Neos:ContentComponent) {
-    contentElement = true
-
-    // Global Settings for all Embed Players
-    maximumWidth = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.maximumWidth')}
-    wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
-    image = ${q(node).property('image')}
-
-    // Custom settings
+prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEmbedHelper:Content) {
     package = 'Video'
     videoFileTypes = ${['mp4', 'webm', 'ogg']}
-
 
     assets = ${q(node).property('assets')}
     hasExternalSwitch = ${q(node).is('[instanceof Jonnitto.PrettyEmbedVideo:Mixin.Sources]')}
@@ -21,34 +12,10 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Neos.Neos:Content
     tracks = ${q(node).children('[instanceof Jonnitto.PrettyEmbedVideo:Content.Track]').get()}
     setFirstTrackToDefault = ${q(node).property('setFirstTrackToDefault')}
 
-    // set variable for helper prototypes
-    @context.package = ${this.package}
-
-    lightbox = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'lightbox'
-    }
-
     # If true, the video automatically begins to play back as soon
     # as it can do so without stopping to finish loading the data.
     autoplay = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'autoplay'
-    }
-
-    # If true, the browser will offer controls to allow the user to control
-    # video playback, including volume, seeking, and pause/resume playback.
-    controls = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'controls'
-    }
-
-    # If true, the browser will automatically seek back 
-    # to the start upon reaching the end of the video.
-    loop = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'loop'
-    }
-
-    # Whether the video is muted upon loading. Set automatically to true if autoplay is enabled
-    muted = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'muted'
     }
 
     # This enumerated attribute is intended to provide a hint to the browser about what
@@ -61,15 +28,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Neos.Neos:Content
         property = 'preload'
     }
 
-    # Whether the video plays inline on supported mobile devices.
-    # Note that if set to false it does not imply that the video will always be played in fullscreen.
-    playsinline = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'playsinline'
-    }
-
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-crossorigin
     # anonymous || use-credentials
-    playsinline = Jonnitto.PrettyEmbedHelper:GetProperty {
+    crossorigin = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'crossorigin'
     }
 
@@ -140,7 +101,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Neos.Neos:Content
                 renderer = afx`<Jonnitto.PrettyEmbedHelper:Notification key='noPoster' default='You need to define a preview image.' />`
             }
             default {
-                condition = ${true}
+                condition = true
                 renderer = afx`
                     <Jonnitto.PrettyEmbedVideo:Component.Video {...props} />
                     <Jonnitto.PrettyEmbedVideo:Component.Backend setFirstTrackToDefault={props.setFirstTrackToDefault} />
@@ -148,7 +109,4 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Neos.Neos:Content
             }
         }
     }
-
-    @context.contentElement = ${this.contentElement}
-    @process.contentElementWrapping.@if.contentElementWrapping = ${contentElement}
 }

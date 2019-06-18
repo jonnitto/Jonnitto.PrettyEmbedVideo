@@ -18,6 +18,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
     id = null
 
     poster = null
+    alternativeText = null
 
     sources = null
     tracks = null
@@ -44,12 +45,10 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
             >
                 {props.content}
             </video>
-            <img @if.set={props.poster} src={props.poster} />
+            <img @if.set={props.poster} alt={props.alternativeText} src={props.poster} />
         </div>
     `
-    renderer.@process.wrapper = Neos.Fusion:Tag {
-        @if.render = ${props.wrapper}
-        attributes.class = ${Type.isString(props.wrapper) ? props.wrapper : null}
-        content = ${value}
+    renderer.@process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
+        wrapper = ${props.wrapper}
     }
 }
