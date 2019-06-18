@@ -10,7 +10,7 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          group: sources
+          group: video
           position: 10
     assets:
       ui:

@@ -7,7 +7,7 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          group: sources
+          group: video
           position: 30
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
@@ -18,7 +18,7 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          group: sources
+          group: video
           position: 40
           editor: Neos.Neos/Inspector/Editors/CodeEditor
     externalOgg:
@@ -27,6 +27,6 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          group: sources
+          group: video
           position: 50
           editor: Neos.Neos/Inspector/Editors/CodeEditor

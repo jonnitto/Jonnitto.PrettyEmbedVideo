@@ -9,7 +9,7 @@
         help:
           message: i18n
         inspector:
-          group: sources
+          group: video
           position: 20
           editorOptions:
             accept: 'video/*'
