@@ -2,7 +2,7 @@
     "name": "jonnitto/prettyembedvideo",
     "type": "neos-plugin",
     "license": "GPL-3.0-or-later",
-    "description": "Prettier embeds for your videos in Neos CMS - with nice options like high-res preview images and advanced customisation of embed options.",
+    "description": "Prettier embeds for your videos in Neos CMS - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.",
     "keywords": [
         "flow",
         "neos",
