@@ -33,7 +33,6 @@
     "archive": {
         "exclude": [
             ".gitattributes",
-            ".gitignore",
             ".github",
             "CODE_OF_CONDUCT.md"
         ]
