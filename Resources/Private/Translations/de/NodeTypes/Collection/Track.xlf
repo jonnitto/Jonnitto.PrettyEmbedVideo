@@ -5,7 +5,7 @@
         <body>
             <trans-unit id="properties.setFirstTrackToDefault" xml:space="preserve">
                 <source>Set first caption as default</source>
-                <target>Ersten Untertitel ist Standarduntertitel</target>
+                <target>Erster Untertitel ist Standarduntertitel</target>
             </trans-unit>
             <trans-unit id="properties.setFirstTrackToDefault.ui.help.message" xml:space="preserve">
                 <source>If set, the first caption will be enabled unless the user's preferences indicate that another one is more appropriate.</source>
