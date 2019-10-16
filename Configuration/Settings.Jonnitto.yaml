@@ -31,5 +31,5 @@ Jonnitto:
       playsinline: true
 
       # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-crossorigin
-      # anonymous || use-credentials || true
-      crossorigin: true
+      # anonymous || use-credentials || true || false
+      crossorigin: false
