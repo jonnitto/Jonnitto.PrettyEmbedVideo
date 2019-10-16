@@ -35,7 +35,7 @@ This package is member of the [PrettyEmbedCollection](https://github.com/jonnitt
 - [PrettyEmbedVimeo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo)
 - [PrettyEmbedYoutube](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube)
 
-If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group.
+If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group. 
 
 ## FAQ
 
@@ -46,12 +46,12 @@ If you install the PrettyEmbedCollection the video players get grouped into a ow
 | YouTube Video                      |         ✓          |   ✓    |
 | YouTube Playlist                   |         ✓          |        |
 | Vimeo                              |         ✓          |   ✓    |
-| Native Audio                       |                    |   ✓    |
+| Native Audio                       |         ✓          |   ✓    |
 | Native Video                       |         ✓          |   ✓    |
 | Advanced captions for native video |         ✓          |        |
 | Preview image                      |         ✓          |        |
 | Lightbox included                  |         ✓          |        |
-| Preview image                      |         ✓          |        |
+| Preview image (for videos)         |         ✓          |        |
 | Javascript API                     |                    |   ✓    |
 | Filesize (JS & CSS)                |      smaller       | bigger |
 
