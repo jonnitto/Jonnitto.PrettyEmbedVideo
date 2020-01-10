@@ -16,6 +16,7 @@ Prettier embeds for your native videos in [Neos CMS](https://www.neos.io) - with
 | Version | Neos    |
 | ------- | ------- |
 | 1.\*    | ^4.2.\* |
+| 2.\*    | ^4.2.\* |
 
 ## Installation
 
