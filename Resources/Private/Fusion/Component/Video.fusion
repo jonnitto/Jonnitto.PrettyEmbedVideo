@@ -45,7 +45,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
             >
                 {props.content}
             </video>
-            <img @if.set={props.poster} alt={props.alternativeText} src={props.poster} />
+            <img @if.set={props.poster} alt={props.alternativeText} src={props.poster} loading='lazy' />
         </div>
     `
     renderer.@process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
