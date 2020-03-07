@@ -20,6 +20,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
     poster = null
     alternativeText = null
 
+    playButton = Jonnitto.PrettyEmbedHelper:Button.Play
+    pauseButton = Jonnitto.PrettyEmbedHelper:Button.Pause
+
     sources = null
     tracks = null
     content = ${(Type.isString(this.sources) ? this.sources : '') + (Type.isString(this.tracks) ? this.tracks : '')}
@@ -29,7 +32,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
     setAutoplay = ${this.lightbox ? null : this.autoplay}
 
     renderer = afx`
-        <div class={BEM.string('jonnitto-prettyembed', null, {video: true, type: props.type, autoplay: props.setAutoplay})}>
+        <div class={BEM.modifier('jonnitto-prettyembed', {video: true, type: props.type, autoplay: props.setAutoplay})}>
             <video
                 id={props.id}
                 data-controls={props.controls}
@@ -45,7 +48,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
             >
                 {props.content}
             </video>
-            <img @if.set={props.poster} alt={props.alternativeText} src={props.poster} loading='lazy' />
+            {props.setAutoplay ? '' : props.playButton}
+            {props.controls || props.setAutoplay ? '' : props.pauseButton}
+            <img @if.set={props.poster} alt={props.alternativeText} src={props.poster} loading='lazy' class='jonnitto-prettyembed__preview' />
         </div>
     `
     renderer.@process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
