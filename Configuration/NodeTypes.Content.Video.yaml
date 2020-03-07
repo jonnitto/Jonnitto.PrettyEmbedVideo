@@ -8,10 +8,9 @@
     'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Title': true
-    
-    # If you want to give the editor more control, 
-    # you can also add also these mixins:
 
+    # If you want to give the editor more control,
+    # you can also add also these mixins:
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Controls': true
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Autoplay': true
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Mute': true
@@ -20,4 +19,3 @@
     label: i18n
     icon: 'fas fa-video'
     position: 900
-
