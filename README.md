@@ -1,22 +1,14 @@
-[![Latest Stable Version](https://poser.pugx.org/jonnitto/prettyembedvideo/v/stable)](https://packagist.org/packages/jonnitto/prettyembedvideo)
-[![Total Downloads](https://poser.pugx.org/jonnitto/prettyembedvideo/downloads)](https://packagist.org/packages/jonnitto/prettyembedvideo)
-[![License](https://poser.pugx.org/jonnitto/prettyembedvideo/license)](https://packagist.org/packages/jonnitto/prettyembedvideo)
-[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.PrettyEmbedVideo.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/fork)
-[![Support development](https://img.shields.io/badge/Donate-PayPal-yellow.svg)](https://www.paypal.me/Jonnitto/20eur)
-[![My wishlist on amazon](https://img.shields.io/badge/Wishlist-Amazon-yellow.svg)](https://www.amazon.de/hz/wishlist/ls/2WPGORAVYF39B?&sort=default)  
-[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.PrettyEmbedVideo.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/stargazers)
-[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.PrettyEmbedVideo.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/subscription)
-[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
-[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+[![Latest stable version]][packagist] [![Total downloads]][packagist] [![License]][packagist] [![GitHub forks]][fork] [![Donate Paypal]][paypal] [![Wishlist amazon]][amazon] [![GitHub stars]][stargazers] [![GitHub watchers]][subscription] [![GitHub followers]][followers] [![Follow Jon on Twitter]][twitter]
 
 # Jonnitto.PrettyEmbedVideo
 
-Prettier embeds for your native videos in [Neos CMS](https://www.neos.io) - with nice options like high-res preview images, lightbox feature, captions, and advanced customization of embed options.
+Prettier embeds for your native videos in [Neos CMS] - with nice options like high-res preview images, lightbox feature, captions, and advanced customization of embed options.
 
-| Version | Neos    |
-| ------- | ------- |
-| 1.\*    | ^4.2.\* |
-| 2.\*    | ^4.2.\* |
+| Version | Neos           |
+| ------- | -------------- |
+| 1.\*    | ^4.2.\* + 5.\* |
+| 2.\*    | ^4.2.\* + 5.\* |
+| 3.\*    | ^4.2.\* + 5.\* |
 
 ## Installation
 
@@ -30,17 +22,17 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 
 ## PrettyEmbedCollection
 
-This package is member of the [PrettyEmbedCollection](https://github.com/jonnitto/Jonnitto.PrettyembedCollection) which contains following packages:
+This package is member of the [PrettyEmbedCollection] which contains following packages:
 
-- [PrettyEmbedVideo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo)
-- [PrettyEmbedVimeo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo)
-- [PrettyEmbedYoutube](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube)
+- [PrettyEmbedVideo]
+- [PrettyEmbedVimeo]
+- [PrettyEmbedYoutube]
 
-If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group. 
+If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group.
 
 ## FAQ
 
-**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
+**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr]?**
 
 |                                    | PrettyEmbed series |  Plyr  |
 | ---------------------------------- | :----------------: | :----: |
@@ -62,16 +54,45 @@ All packages from the PrettyEmbed series have the benefit of a better frontend p
 
 ### Configuration
 
-If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml](Configuration/Settings.Jonnitto.yaml) file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video should open in a lightbox you can deactivate the mixin in your Configuration folder like this:
+If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml] file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video should open in a lightbox you can deactivate the mixin in your Configuration folder like this:
 
 ```yaml
-"Jonnitto.PrettyEmbedVideo:Content.Video":
+'Jonnitto.PrettyEmbedVideo:Content.Video':
   superTypes:
-    "Jonnitto.PrettyEmbedHelper:Mixin.Lightbox": false
+    'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': false
 ```
 
 ### Fusion
 
-If you want to use the player as a pure component, you can use the [`Jonnitto.PrettyEmbedVimeo:Component.Video`](Resources/Private/Fusion/Component/Video.fusion) fusion prototype.
+If you want to use the player as a pure component, you can use the [`Jonnitto.PrettyEmbedVideo:Component.Video`] fusion prototype.
 
-If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedVideo:Content.Video`](Resources/Private/Fusion/Content/Video.fusion) prototype. For easier including in your own node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create for example a text with video node type.
+If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedVideo:Content.Video`] prototype. For easier including in your own node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create for example a text with video node type.
+
+[packagist]: https://packagist.org/packages/jonnitto/prettyembedvideo
+[latest stable version]: https://poser.pugx.org/jonnitto/prettyembedvideo/v/stable
+[total downloads]: https://poser.pugx.org/jonnitto/prettyembedvideo/downloads
+[license]: https://poser.pugx.org/jonnitto/prettyembedvideo/license
+[github forks]: https://img.shields.io/github/forks/jonnitto/Jonnitto.PrettyEmbedVideo.svg?style=social&label=Fork
+[donate paypal]: https://img.shields.io/badge/Donate-PayPal-yellow.svg
+[wishlist amazon]: https://img.shields.io/badge/Wishlist-Amazon-yellow.svg
+[amazon]: https://www.amazon.de/hz/wishlist/ls/2WPGORAVYF39B?&sort=default
+[paypal]: https://www.paypal.me/Jonnitto/20eur
+[github stars]: https://img.shields.io/github/stars/jonnitto/Jonnitto.PrettyEmbedVideo.svg?style=social&label=Stars
+[github watchers]: https://img.shields.io/github/watchers/jonnitto/Jonnitto.PrettyEmbedVideo.svg?style=social&label=Watch
+[github followers]: https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow
+[follow jon on twitter]: https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow
+[twitter]: https://twitter.com/jonnitto
+[fork]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/fork
+[stargazers]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/stargazers
+[subscription]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo/subscription
+[followers]: https://github.com/jonnitto/followers
+[license]: LICENSE
+[neos cms]: https://www.neos.io
+[prettyembedcollection]: https://github.com/jonnitto/Jonnitto.PrettyembedCollection
+[prettyembedvideo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo
+[prettyembedvimeo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo
+[prettyembedyoutube]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube
+[jonnitto.plyr]: https://github.com/jonnitto/Jonnitto.Plyr
+[settings.jonnitto.yaml]: Configuration/Settings.Jonnitto.yaml
+[`jonnitto.prettyembedvideo:component.video`]: Resources/Private/Fusion/Component/Video.fusion
+[`jonnitto.prettyembedvideo:content.video`]: Resources/Private/Fusion/Content/Video.fusion
