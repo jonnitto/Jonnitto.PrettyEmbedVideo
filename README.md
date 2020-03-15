@@ -12,7 +12,7 @@ Prettier embeds for your native videos in [Neos CMS] - with nice options like hi
 
 ## Installation
 
-Most of the time you have to make small adjustments to a package (e.g. configuration in `Settings.yaml`). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site packages located under `Packages/Sites/`. To install it correctly go to your theme package (e.g.`Packages/Sites/Foo.Bar`) and run following command:
+Most of the time, you have to make small adjustments to a package (e.g., configuration in `Settings.yaml`). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under `Packages/Sites/`. To install it correctly go to your theme package (e.g.`Packages/Sites/Foo.Bar`) and run following command:
 
 ```bash
 composer require jonnitto/prettyembedvideo --no-update
@@ -28,7 +28,7 @@ This package is member of the [PrettyEmbedCollection] which contains following p
 - [PrettyEmbedVimeo]
 - [PrettyEmbedYoutube]
 
-If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group.
+If you install the PrettyEmbedCollection the video players get grouped into an own group in the node-inspector; otherwise, they will be in the default group.
 
 ## FAQ
 
@@ -48,7 +48,7 @@ If you install the PrettyEmbedCollection the video players get grouped into a ow
 | Javascript API                     |                    |   ✓    |
 | Filesize (JS & CSS)                |      smaller       | bigger |
 
-All packages from the PrettyEmbed series have the benefit of a better frontend performance since the player gets only loaded on request. So, no iframe/video get's loaded until the user wants to watch a video.
+All packages from the PrettyEmbed series have the benefit of a better frontend performance since the player gets only loaded on request. So, no iframe/video gets loaded until the user wants to watch a video.
 
 ## Customization
 
@@ -62,11 +62,31 @@ If you want to customize the default settings, take a look at the [Settings.Jonn
     'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': false
 ```
 
+These are the available mixins used for the video:
+
+| Mixin name (Prefix: `Jonnitto.PrettyEmbed`) | Description                                                      | Default value | Enabled per default |
+| ------------------------------------------- | ---------------------------------------------------------------- | :-----------: | :-----------------: |
+| `Helper:Mixin.Groups`                       | Enables the inspector groups                                     |               |          ✓          |
+| `Helper:Mixin.IncludeAssets`                | Include the frontend resources                                   |               |          ✓          |
+| `Video:Mixin.Sources`                       | Includes the properties for external and internal sources        |               |          ✓          |
+| `Video:Collection.Track`                    | Include the possibility to set tracks to the video               |               |          ✓          |
+| `Helper:Mixin.Image`                        | Add the preview image property                                   |               |          ✓          |
+| `Helper:Mixin.Lightbox`                     | Open the video in a lightbox                                     |    `false`    |          ✓          |
+| `Helper:Mixin.Title`                        | Set the title for easily identify the video in the content tree. |               |          ✓          |
+| `Helper:Mixin.Loop`                         | Loop the video                                                   |    `false`    |                     |
+| `Helper:Mixin.Controls`                     | Show the controls                                                |    `true`     |                     |
+| `Helper:Mixin.Autoplay`                     | Autoplays the video,                                             |    `false`    |                     |
+| `Helper:Mixin.Muted`                        | Mutes the video                                                  |    `false`    |                     |
+
+If you want to use only internal or only external sources, you have to disable the supertype [`Jonnitto.PrettyEmbedVideo:Mixin.Sources`] and enable [`Jonnitto.PrettyEmbedVideo:Mixin.Assets`] (internal sources) or [`Jonnitto.PrettyEmbedVideo:Mixin.ExternalSources`] (external sources)
+
+[`Jonnitto.PrettyEmbedVideo:Collection.Track`] adds the possability to add [`Jonnitto.PrettyEmbedVideo:Content.Track`] for subtitles, captions, descriptions, chapters or metadata.
+
 ### Fusion
 
 If you want to use the player as a pure component, you can use the [`Jonnitto.PrettyEmbedVideo:Component.Video`] fusion prototype.
 
-If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedVideo:Content.Video`] prototype. For easier including in your own node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create for example a text with video node type.
+If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedVideo:Content.Video`] prototype. For easier including in your node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create, for example, a text with a video node type.
 
 [packagist]: https://packagist.org/packages/jonnitto/prettyembedvideo
 [latest stable version]: https://poser.pugx.org/jonnitto/prettyembedvideo/v/stable
@@ -96,3 +116,8 @@ If you want to read the node properties and let the package handle all for you, 
 [settings.jonnitto.yaml]: Configuration/Settings.Jonnitto.yaml
 [`jonnitto.prettyembedvideo:component.video`]: Resources/Private/Fusion/Component/Video.fusion
 [`jonnitto.prettyembedvideo:content.video`]: Resources/Private/Fusion/Content/Video.fusion
+[`jonnitto.prettyembedvideo:mixin.sources`]: Configuration/NodeTypes.Mixin.Sources.yaml
+[`jonnitto.prettyembedvideo:mixin.assets`]: Configuration/NodeTypes.Mixin.Assets.yaml
+[`jonnitto.prettyembedvideo:mixin.externalsources`]: Configuration/NodeTypes.Mixin.ExternalSources.yaml
+[`jonnitto.prettyembedvideo:collection.track`]: Configuration/NodeTypes.Collection.Track.yaml
+[`jonnitto.prettyembedvideo:content.track`]: Configuration/NodeTypes.Content.Track.yaml
