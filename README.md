@@ -4,6 +4,9 @@
 
 Prettier embeds for your native videos in [Neos CMS] - with nice options like high-res preview images, lightbox feature, captions, and advanced customization of embed options.
 
+![Screenshot]
+![Screenshot with captions]
+
 | Version | Neos           |
 | ------- | -------------- |
 | 1.\*    | ^4.2.\* + 5.\* |
@@ -121,3 +124,5 @@ If you want to read the node properties and let the package handle all for you, 
 [`jonnitto.prettyembedvideo:mixin.externalsources`]: Configuration/NodeTypes.Mixin.ExternalSources.yaml
 [`jonnitto.prettyembedvideo:collection.track`]: Configuration/NodeTypes.Collection.Track.yaml
 [`jonnitto.prettyembedvideo:content.track`]: Configuration/NodeTypes.Content.Track.yaml
+[screenshot]: https://user-images.githubusercontent.com/4510166/76709933-3fbaf000-6703-11ea-8281-007d48174992.png
+[screenshot with captions]: https://user-images.githubusercontent.com/4510166/76709937-447fa400-6703-11ea-9793-4eec0c7fb90f.png
