@@ -1,6 +1,7 @@
 Jonnitto:
   PrettyEmbedVideo:
     defaults:
+      # Should the video be opened on a lightbox? Per default this is set via the node properties
       lightbox: false
 
       # If true, the video automatically begins to play back as soon
