@@ -12,6 +12,34 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     tracks = ${q(node).children('[instanceof Jonnitto.PrettyEmbedVideo:Content.Track]').get()}
     setFirstTrackToDefault = ${q(node).property('setFirstTrackToDefault')}
 
+    # Should the video be opened on a lightbox?
+    lightbox = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'lightbox'
+    }
+
+    # Whether the video plays inline on supported mobile devices.
+    # Note that if set to false it does not imply that the video will always be played in fullscreen.
+    playsinline = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'playsinline'
+    }
+
+    # If true, the browser will automatically seek back 
+    # to the start upon reaching the end of the video.
+    loop = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'loop'
+    }
+
+    # If true, the browser will offer controls to allow the user to control
+    # video playback, including volume, seeking, and pause/resume playback.
+    controls = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'controls'
+    }
+
+    # Whether the video is muted upon loading. Set automatically to true if autoplay is enabled
+    muted = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'muted'
+    }
+
     # If true, the video automatically begins to play back as soon
     # as it can do so without stopping to finish loading the data.
     autoplay = Jonnitto.PrettyEmbedHelper:GetProperty {
