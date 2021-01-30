@@ -26,6 +26,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
     sources = null
     tracks = null
     content = ${(Type.isString(this.sources) ? this.sources : '') + (Type.isString(this.tracks) ? this.tracks : '')}
+    ownPreview = null
 
     // Internal
     type = ${this.lightbox ? 'lightbox' : 'inline'}
@@ -50,7 +51,10 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
             </video>
             {props.setAutoplay ? '' : props.playButton}
             {props.controls || props.setAutoplay ? '' : props.pauseButton}
-            <img @if.set={props.poster} alt={props.alternativeText} src={props.poster} loading='lazy' class='jonnitto-prettyembed__preview' />
+            <Neos.Fusion:Augmenter class='jonnitto-prettyembed__preview' @if.set={props.ownPreview || props.poster}>
+                {props.ownPreview}
+                <img @if.set={props.poster && !props.ownPreview} alt={props.alternativeText} src={props.poster} loading='lazy' />
+            </Neos.Fusion:Augmenter>
         </div>
     `
     renderer.@process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {

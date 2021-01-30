@@ -12,6 +12,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     tracks = ${q(node).children('[instanceof Jonnitto.PrettyEmbedVideo:Content.Track]').get()}
     setFirstTrackToDefault = ${q(node).property('setFirstTrackToDefault')}
 
+    # Use this if you want to set a own Preview
+    ownPreview = null
+
     # Should the video be opened on a lightbox?
     lightbox = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'lightbox'
