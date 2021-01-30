@@ -19,6 +19,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
 
     poster = null
     alternativeText = null
+    title = null
 
     playButton = Jonnitto.PrettyEmbedHelper:Button.Play
     pauseButton = Jonnitto.PrettyEmbedHelper:Button.Pause
@@ -37,6 +38,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
             <video
                 id={props.id}
                 data-controls={props.controls}
+                aria-label={props.title}
                 autoplay={props.setAutoplay}
                 loop={props.loop}
                 muted={props.muted || props.setAutoplay}

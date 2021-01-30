@@ -11,6 +11,8 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
 
     tracks = ${q(node).children('[instanceof Jonnitto.PrettyEmbedVideo:Content.Track]').get()}
     setFirstTrackToDefault = ${q(node).property('setFirstTrackToDefault')}
+    title = ${q(node).filter('[instanceof Jonnitto.PrettyEmbedHelper:Mixin.Title]').property('title')}
+    alternativeText = ${this.title}
 
     # Use this if you want to set a own Preview
     ownPreview = null
