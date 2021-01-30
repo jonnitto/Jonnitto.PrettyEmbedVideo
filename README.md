@@ -2,7 +2,7 @@
 
 # Jonnitto.PrettyEmbedVideo
 
-Prettier embeds for your native videos in [Neos CMS] - with nice options like high-res preview images, lightbox feature, captions, and advanced customization of embed options.
+Prettier embeds for your native videos in [Neos CMS] - with excellent options like high-res preview images, lightbox feature, captions, and advanced customization of embed options.
 
 ![Screenshot]
 ![Screenshot with captions]
@@ -15,13 +15,13 @@ Prettier embeds for your native videos in [Neos CMS] - with nice options like hi
 
 ## Installation
 
-Most of the time, you have to make small adjustments to a package (e.g., configuration in `Settings.yaml`). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under `Packages/Sites/`. To install it correctly go to your theme package (e.g.`Packages/Sites/Foo.Bar`) and run following command:
+Most of the time, you have to make small adjustments to a package (e.g., a configuration in `Settings.yaml`). Thus, it is essential to add the corresponding package to the composer from your theme package. Mostly this is the site package located under `Packages/Sites/`. To install it correctly, go to your theme package (e.g.`Packages/Sites/Foo.Bar`) and run the following command:
 
 ```bash
 composer require jonnitto/prettyembedvideo --no-update
 ```
 
-The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
+The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the Neos installation's root and run `composer update`. Et voilà! Your desired package is now installed correctly.
 
 ## PrettyEmbedCollection
 
@@ -31,11 +31,11 @@ This package is member of the [PrettyEmbedCollection] which contains following p
 - [PrettyEmbedVimeo]
 - [PrettyEmbedYoutube]
 
-If you install the PrettyEmbedCollection the video players get grouped into an own group in the node-inspector; otherwise, they will be in the default group.
+If you install the PrettyEmbedCollection, the video players get grouped into an own group in the node-inspector; otherwise, they will be in the default group.
 
 ## FAQ
 
-**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr]?**
+**What are the differences between the PrettyEmbed series to [Jonnitto.Plyr]?**
 
 |                                    | PrettyEmbed series |  Plyr  |
 | ---------------------------------- | :----------------: | :----: |
@@ -51,13 +51,13 @@ If you install the PrettyEmbedCollection the video players get grouped into an o
 | Javascript API                     |                    |   ✓    |
 | Filesize (JS & CSS)                |      smaller       | bigger |
 
-All packages from the PrettyEmbed series have the benefit of a better frontend performance since the player gets only loaded on request. So, no iframe/video gets loaded until the user wants to watch a video.
+All packages from the PrettyEmbed series benefit from a better frontend performance since the player gets only loaded on request. So, no iframe/video gets loaded until the user wants to watch a video.
 
 ## Customization
 
 ### Configuration
 
-If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml] file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video should open in a lightbox you can deactivate the mixin in your Configuration folder like this:
+If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml] file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video should open in a lightbox, you can deactivate the mixin in your Configuration folder like this:
 
 ```yaml
 'Jonnitto.PrettyEmbedVideo:Content.Video':
@@ -75,7 +75,7 @@ These are the available mixins used for the video:
 | `Video:Collection.Track`                    | Include the possibility to set tracks to the video               |               |          ✓          |
 | `Helper:Mixin.Image`                        | Add the preview image property                                   |               |          ✓          |
 | `Helper:Mixin.Lightbox`                     | Open the video in a lightbox                                     |    `false`    |          ✓          |
-| `Helper:Mixin.Title`                        | Set the title for easily identify the video in the content tree. |               |          ✓          |
+| `Helper:Mixin.Title`                        | Set the title to identify the video in the content tree easily, and pass the title as `aria-label` to the video. |               |          ✓          |
 | `Helper:Mixin.Loop`                         | Loop the video                                                   |    `false`    |                     |
 | `Helper:Mixin.Controls`                     | Show the controls                                                |    `true`     |                     |
 | `Helper:Mixin.Autoplay`                     | Autoplays the video,                                             |    `false`    |                     |
