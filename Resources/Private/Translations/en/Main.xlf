@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" 
+<xliff version="1.2"
     xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="de" target-language="en" datatype="plaintext">
         <body>
@@ -14,6 +14,10 @@
             <trans-unit id="noPoster" xml:space="preserve">
                 <source>You need to define a preview image.</source>
                 <target>You need to define a preview image.</target>
+            </trans-unit>
+            <trans-unit id="lang" xml:space="preserve">
+                <source>en</source>
+                <target>en</target>
             </trans-unit>
         </body>
     </file>
