@@ -5,7 +5,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Backend) < prototype(Neos.Fusion:C
     @context.setFirstTrackToDefault = ${this.setFirstTrackToDefault}
 
     @if.render = ${node.context.inBackend}
-    lang = ${Carbon.Backend.translate('lang', 'en', [], null, 'Jonnitto.PrettyEmbedVideo')}
+    lang = ${Carbon.Backend.translate('lang', 'en', [], 'Main', 'Jonnitto.PrettyEmbedVideo')}
 
     renderer = afx`
         <input class='jonnitto-prettyembedbackend__checkbox' id={'checkbox-' + props.identifier} type='checkbox' />
