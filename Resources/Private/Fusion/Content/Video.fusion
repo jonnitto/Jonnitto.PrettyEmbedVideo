@@ -96,7 +96,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                         mp4 = ${Type.isString(props.externalMp4) ? String.trim(props.externalMp4) : null}
                         webm = ${Type.isString(props.externalWebm) ? String.trim(props.externalWebm) : null}
                         ogg = ${Type.isString(props.externalOgg) ? String.trim(props.externalOgg) : null}
-                        @process.filter = ${Carbon.Array.filter(value)}
+                        @process.filter = ${Array.filter(value)}
                     }
                     itemKey = 'fileextension'
                     itemRenderer = Neos.Fusion:Loop {
