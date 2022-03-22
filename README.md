@@ -7,11 +7,12 @@ Prettier embeds for your native videos in [Neos CMS] - with excellent options li
 ![Screenshot]
 ![Screenshot with captions]
 
-| Version | Neos                  | Maintained |
-| ------- | --------------------- | :--------: |
-| 1.\*    | ^4.2.\* + 5.\*        |            |
-| 2.\*    | ^4.2.\* + 5.\*        |            |
-| 3.\*    | ^4.2.\* + 5.\* + 7.\* |      ✓     |
+| Version | Neos           | Maintained |
+| ------- | -------------- | :--------: |
+| 1.\*    | ^4.2.\* + 5.\* |            |
+| 2.\*    | ^4.2.\* + 5.\* |            |
+| 3.\*    | ^4.2.\* + > 5  |      ✓     |
+| 4.\*    | > 5.\3         |      ✓     |
 
 ## Installation
 
@@ -28,8 +29,7 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 This package is member of the [PrettyEmbedCollection] which contains following packages:
 
 - [PrettyEmbedVideo]
-- [PrettyEmbedVimeo]
-- [PrettyEmbedYoutube]
+- [PrettyEmbedVideoPlatforms]
 
 If you install the PrettyEmbedCollection, the video players get grouped into an own group in the node-inspector; otherwise, they will be in the default group.
 
@@ -70,7 +70,6 @@ These are the available mixins used for the video:
 | Mixin name (Prefix: `Jonnitto.PrettyEmbed`) | Description                                                      | Default value | Enabled per default |
 | ------------------------------------------- | ---------------------------------------------------------------- | :-----------: | :-----------------: |
 | `Helper:Mixin.Groups`                       | Enables the inspector groups                                     |               |          ✓          |
-| `Helper:Mixin.IncludeAssets`                | Include the frontend resources                                   |               |          ✓          |
 | `Video:Mixin.Sources`                       | Includes the properties for external and internal sources        |               |          ✓          |
 | `Video:Collection.Track`                    | Include the possibility to set tracks to the video               |               |          ✓          |
 | `Helper:Mixin.Image`                        | Add the preview image property                                   |               |          ✓          |
@@ -113,8 +112,7 @@ If you want to read the node properties and let the package handle all for you, 
 [neos cms]: https://www.neos.io
 [prettyembedcollection]: https://github.com/jonnitto/Jonnitto.PrettyembedCollection
 [prettyembedvideo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo
-[prettyembedvimeo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo
-[prettyembedyoutube]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube
+[prettyembedvideoplatforms]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideoPlatforms
 [jonnitto.plyr]: https://github.com/jonnitto/Jonnitto.Plyr
 [settings.jonnitto.yaml]: Configuration/Settings.Jonnitto.yaml
 [`jonnitto.prettyembedvideo:component.video`]: Resources/Private/Fusion/Component/Video.fusion

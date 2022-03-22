@@ -2,7 +2,6 @@
   superTypes:
     'Neos.Neos:Content': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Groups': true
-    'Jonnitto.PrettyEmbedHelper:Mixin.IncludeAssets': true
     'Jonnitto.PrettyEmbedVideo:Mixin.Sources': true
     'Jonnitto.PrettyEmbedVideo:Collection.Track': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
