@@ -7,12 +7,12 @@ Prettier embeds for your native videos in [Neos CMS] - with excellent options li
 ![Screenshot]
 ![Screenshot with captions]
 
-| Version | Neos           | Maintained |
-| ------- | -------------- | :--------: |
-| 1.\*    | ^4.2.\* + 5.\* |            |
-| 2.\*    | ^4.2.\* + 5.\* |            |
-| 3.\*    | ^4.2.\* + > 5  |      ✓     |
-| 4.\*    | > 5.\3         |      ✓     |
+| Version | Neos            | Maintained |
+| ------- | --------------- | :--------: |
+| 1.\*    | ^4.2.\* + 5.\*  |            |
+| 2.\*    | ^4.2.\* + 5.\*  |            |
+| 3.\*    | ^4.2.\* + >= 5  |      ✓     |
+| 4.\*    | >= 5.3          |      ✓     |
 
 ## Installation
 
