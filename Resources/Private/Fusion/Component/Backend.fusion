@@ -4,7 +4,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Backend) < prototype(Neos.Fusion:C
 
     @context.setFirstTrackToDefault = ${this.setFirstTrackToDefault}
 
-    @if.render = ${node.context.inBackend}
+    @if.render = ${node.context.inBackend && q(node).is('[instanceof Jonnitto.PrettyEmbedVideo:Collection.Track]')}
     lang = ${Carbon.Backend.translate('lang', 'en', [], 'Main', 'Jonnitto.PrettyEmbedVideo')}
 
     renderer = afx`
