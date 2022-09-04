@@ -15,7 +15,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     alternativeText = ${this.title}
 
     # Use this if you want to set a own Preview
-    ownPreview = null
+    ownPreview = ${null}
 
     # Should the video be opened on a lightbox?
     lightbox = Jonnitto.PrettyEmbedHelper:GetProperty {
@@ -28,7 +28,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
         property = 'playsinline'
     }
 
-    # If true, the browser will automatically seek back 
+    # If true, the browser will automatically seek back
     # to the start upon reaching the end of the video.
     loop = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'loop'
@@ -67,8 +67,8 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
         property = 'crossorigin'
     }
 
-    width = null
-    height = null
+    width = ${null}
+    height = ${null}
 
     renderer = Neos.Fusion:Component {
         @apply {

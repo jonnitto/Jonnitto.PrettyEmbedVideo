@@ -1,9 +1,9 @@
 prototype(Jonnitto.PrettyEmbedVideo:Component.Track) < prototype(Neos.Fusion:Component) {
-    asset = null
-    kind = null
-    label = null
-    srclang = null
-    default = null
+    asset = ${null}
+    kind = ${null}
+    label = ${null}
+    srclang = ${null}
+    default = ${null}
 
     @if {
         render = ${this.asset && this.kind && this.asset.resource.fileextension == 'vtt'}

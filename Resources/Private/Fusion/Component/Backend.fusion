@@ -1,6 +1,6 @@
 prototype(Jonnitto.PrettyEmbedVideo:Component.Backend) < prototype(Neos.Fusion:Component) {
     identifier = ${q(node).property('_identifier')}
-    setFirstTrackToDefault = null
+    setFirstTrackToDefault = ${null}
 
     @context.setFirstTrackToDefault = ${this.setFirstTrackToDefault}
 

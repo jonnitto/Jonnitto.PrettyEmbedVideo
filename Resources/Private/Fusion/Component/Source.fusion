@@ -1,7 +1,7 @@
 prototype(Jonnitto.PrettyEmbedVideo:Component.Source) < prototype(Neos.Fusion:Component) {
-    asset = null
-    uri = null
-    fileextension = null
+    asset = ${null}
+    uri = ${null}
+    fileextension = ${null}
 
     @if.render = ${this.fileextension && this.uri || (this.asset && this.asset.resource.fileextension == this.fileextension)}
 

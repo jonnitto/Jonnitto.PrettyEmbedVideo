@@ -12,22 +12,22 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
 
     wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
 
-    width = null
-    height = null
+    width = ${null}
+    height = ${null}
 
-    id = null
+    id = ${null}
 
-    poster = null
-    alternativeText = null
-    title = null
+    poster = ${null}
+    alternativeText = ${null}
+    title = ${null}
 
     playButton = Jonnitto.PrettyEmbedHelper:Button.Play
     pauseButton = Jonnitto.PrettyEmbedHelper:Button.Pause
 
-    sources = null
-    tracks = null
+    sources = ${null}
+    tracks = ${null}
     content = ${(Type.isString(this.sources) ? this.sources : '') + (Type.isString(this.tracks) ? this.tracks : '')}
-    ownPreview = null
+    ownPreview = ${null}
 
     // Internal
     type = ${this.lightbox ? 'lightbox' : 'inline'}
