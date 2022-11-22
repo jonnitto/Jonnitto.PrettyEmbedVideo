@@ -34,8 +34,8 @@ prototype(Jonnitto.PrettyEmbedVideo:Component.Video) < prototype(Neos.Fusion:Com
     setAutoplay = ${this.lightbox ? null : this.autoplay}
 
     renderer = afx`
-        <Jonnitto.PrettyEmbedHelper:Assets />
         <div class={BEM.modifier('jonnitto-prettyembed', {video: true, type: props.type, autoplay: props.setAutoplay})}>
+            <Jonnitto.PrettyEmbedHelper:Assets />
             <video
                 id={props.id}
                 data-controls={props.controls}
