@@ -8,7 +8,6 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
         maximumWidth = ${PropTypes.integer}
         wrapper = ${PropTypes.anyOf(PropTypes.string, PropTypes.boolean)}
         loadImageStrategy = ${PropTypes.oneOf(['lazy', 'eager', null, false])}
-        streaming = ${PropTypes.string}
         width = ${PropTypes.integer}
         height = ${PropTypes.integer}
         image = ${PropTypes.instanceOf('Neos\Media\Domain\Model\ImageInterface')}
@@ -18,6 +17,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
 
         // Use this for a custom poster src set
         posterSrcset = ${PropTypes.string}
+
+        // This can used as alternative preview
+        preview = null
     }
 
     player = 'Video'
@@ -34,18 +36,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     setFirstTrackToDefault = ${q(node).property('setFirstTrackToDefault')}
     label = ${q(node).filter('[instanceof Jonnitto.PrettyEmbedHelper:Mixin.Title]').property('title')}
 
-    // This can used as alternative preview
-    preview = null
-
     # Should the video be opened on a lightbox?
     lightbox = Jonnitto.PrettyEmbed:GetProperty {
         property = 'lightbox'
-    }
-
-    # Whether the video plays inline on supported mobile devices.
-    # Note that if set to false it does not imply that the video will always be played in fullscreen.
-    playsinline = Jonnitto.PrettyEmbed:GetProperty {
-        property = 'playsinline'
     }
 
     # If true, the browser will automatically seek back
@@ -104,7 +97,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                         hasAsset = ${props.image}
                         hasEnoughPixel = ${props.image.width >= props.maximumWidth * 2}
                     }
-                    asset = ${props.image || props.metadata.thumbnail}
+                    asset = ${props.image}
                     async = ${props.async}
                     maximumWidth = ${props.maximumWidth * 2}
                 }
@@ -180,7 +173,6 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                         lightbox={props.lightbox}
                         wrapper={props.wrapper}
                         loop={props.loop}
-                        streaming={props.streaming}
                         autoplay={props.autoplay}
                         muted={props.muted}
                         width={props.width}
