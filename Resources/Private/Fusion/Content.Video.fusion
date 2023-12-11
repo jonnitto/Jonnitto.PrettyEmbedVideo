@@ -1,5 +1,26 @@
-prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEmbedHelper:Content) {
-    package = 'Video'
+prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEmbed:Content) {
+    @propTypes {
+        // These properties are already defined in Jonnitto.PrettyEmbed:Content
+        label = ${PropTypes.string}
+        id = ${PropTypes.string}
+        async = ${PropTypes.boolean}
+        class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
+        maximumWidth = ${PropTypes.integer}
+        wrapper = ${PropTypes.anyOf(PropTypes.string, PropTypes.boolean)}
+        loadImageStrategy = ${PropTypes.oneOf(['lazy', 'eager', null, false])}
+        streaming = ${PropTypes.string}
+        width = ${PropTypes.integer}
+        height = ${PropTypes.integer}
+        image = ${PropTypes.instanceOf('Neos\Media\Domain\Model\ImageInterface')}
+        metadata = ${PropTypes.shape({
+            'duration': PropTypes.integer
+        })}
+
+        // Use this for a custom poster src set
+        posterSrcset = ${PropTypes.string}
+    }
+
+    player = 'Video'
     videoFileTypes = ${['mp4', 'webm', 'ogg']}
 
     assets = ${q(node).property('assets')}
@@ -9,45 +30,44 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     externalWebm = ${q(node).property('externalWebm')}
     externalOgg = ${q(node).property('externalOgg')}
 
-    tracks = ${q(node).children('[instanceof Jonnitto.PrettyEmbedVideo:Content.Track]').get()}
+    tracks = ${q(node).property('tracks')}
     setFirstTrackToDefault = ${q(node).property('setFirstTrackToDefault')}
-    title = ${q(node).filter('[instanceof Jonnitto.PrettyEmbedHelper:Mixin.Title]').property('title')}
-    alternativeText = ${this.title}
+    label = ${q(node).filter('[instanceof Jonnitto.PrettyEmbedHelper:Mixin.Title]').property('title')}
 
-    # Use this if you want to set a own Preview
-    ownPreview = ${null}
+    // This can used as alternative preview
+    preview = null
 
     # Should the video be opened on a lightbox?
-    lightbox = Jonnitto.PrettyEmbedHelper:GetProperty {
+    lightbox = Jonnitto.PrettyEmbed:GetProperty {
         property = 'lightbox'
     }
 
     # Whether the video plays inline on supported mobile devices.
     # Note that if set to false it does not imply that the video will always be played in fullscreen.
-    playsinline = Jonnitto.PrettyEmbedHelper:GetProperty {
+    playsinline = Jonnitto.PrettyEmbed:GetProperty {
         property = 'playsinline'
     }
 
     # If true, the browser will automatically seek back
     # to the start upon reaching the end of the video.
-    loop = Jonnitto.PrettyEmbedHelper:GetProperty {
+    loop = Jonnitto.PrettyEmbed:GetProperty {
         property = 'loop'
     }
 
     # If true, the browser will offer controls to allow the user to control
     # video playback, including volume, seeking, and pause/resume playback.
-    controls = Jonnitto.PrettyEmbedHelper:GetProperty {
+    controls = Jonnitto.PrettyEmbed:GetProperty {
         property = 'controls'
     }
 
     # Whether the video is muted upon loading. Set automatically to true if autoplay is enabled
-    muted = Jonnitto.PrettyEmbedHelper:GetProperty {
+    muted = Jonnitto.PrettyEmbed:GetProperty {
         property = 'muted'
     }
 
     # If true, the video automatically begins to play back as soon
     # as it can do so without stopping to finish loading the data.
-    autoplay = Jonnitto.PrettyEmbedHelper:GetProperty {
+    autoplay = Jonnitto.PrettyEmbed:GetProperty {
         property = 'autoplay'
     }
 
@@ -57,18 +77,15 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     #  - none       Indicates that the video should not be preloaded.
     #  - metadata   Indicates that only video metadata (e.g. length) is fetched.
     #  - auto       Indicates that the whole video file can be downloaded, even if the user is not expected to use it
-    preload = Jonnitto.PrettyEmbedHelper:GetProperty {
+    preload = Jonnitto.PrettyEmbed:GetProperty {
         property = 'preload'
     }
 
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-crossorigin
     # anonymous || use-credentials
-    crossorigin = Jonnitto.PrettyEmbedHelper:GetProperty {
+    crossorigin = Jonnitto.PrettyEmbed:GetProperty {
         property = 'crossorigin'
     }
-
-    width = ${null}
-    height = ${null}
 
     renderer = Neos.Fusion:Component {
         @apply {
@@ -77,15 +94,27 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                 poster = Neos.Neos:ImageUri {
                     @if.set = ${props.image}
                     asset = ${props.image}
-                    async = true
+                    async = ${props.async}
                     maximumWidth = ${props.maximumWidth}
+                }
+                poster2x = Neos.Neos:ImageUri {
+                    @if {
+                        noCustomSrcSet = ${!props.posterSrcset}
+                        noCustomPreview = ${!props.preview}
+                        hasAsset = ${props.image}
+                        hasEnoughPixel = ${props.image.width >= props.maximumWidth * 2}
+                    }
+                    asset = ${props.image || props.metadata.thumbnail}
+                    async = ${props.async}
+                    maximumWidth = ${props.maximumWidth * 2}
                 }
                 assets = Neos.Fusion:Loop {
                     items = ${props.videoFileTypes}
                     itemName = 'fileextension'
                     itemRenderer = Neos.Fusion:Loop {
                         items = ${props.assets}
-                        itemRenderer = Jonnitto.PrettyEmbedVideo:Component.Source {
+                        itemRenderer = Jonnitto.PrettyEmbed:Presentation.Source {
+                            type = 'video'
                             asset = ${item}
                             fileextension = ${fileextension}
                         }
@@ -102,7 +131,8 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                     itemRenderer = Neos.Fusion:Loop {
                         // Split by line break
                         items = ${String.pregSplit(item, '/\r?\n/')}
-                        itemRenderer = Jonnitto.PrettyEmbedVideo:Component.Source {
+                        itemRenderer = Jonnitto.PrettyEmbed:Presentation.Source {
+                            type = 'video'
                             uri = ${String.trim(item)}
                             fileextension = ${fileextension}
                         }
@@ -111,10 +141,9 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                 sources = ${props.hasExternalSwitch ? (props.external ? this.external : this.assets) : this.assets + this.external}
                 tracks = Neos.Fusion:Loop {
                     items = ${props.tracks}
-                    itemRenderer = Jonnitto.PrettyEmbedVideo:Content.Track {
-                        contentElement = false
-                        node = ${item}
-                        default = ${iterator.isFirst && props.setFirstTrackToDefault}
+                    itemRenderer = Jonnitto.PrettyEmbed:Presentation.Track {
+                        default = ${props.setFirstTrackToDefault && iterator.isFirst}
+                        @apply.props = ${item}
                     }
                 }
             }
@@ -123,21 +152,41 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
         renderer = Neos.Fusion:Case {
             noVideoAndPoster {
                 condition = ${!props.sources && !props.poster}
-                renderer = afx`<Jonnitto.PrettyEmbedHelper:Notification key='noVideoAndPoster' default='You need to define at least one video file and a preview image.' />`
+                renderer = afx`<Jonnitto.PrettyEmbed:Notification key='noVideoAndPoster' default='You need to define at least one video file and a preview image.' />`
             }
             noVideo {
                 condition = ${!props.sources}
-                renderer = afx`<Jonnitto.PrettyEmbedHelper:Notification key='noVideo' default='You need to define at least one video.' />`
+                renderer = afx`<Jonnitto.PrettyEmbed:Notification key='noVideo' default='You need to define at least one video.' />`
             }
-            noPoster {
-                condition = ${!props.poster}
-                renderer = afx`<Jonnitto.PrettyEmbedHelper:Notification key='noPoster' default='You need to define a preview image.' />`
+            needPreviewImage {
+                condition = ${!props.poster && !props.preview}
+                renderer = afx`<Jonnitto.PrettyEmbed:Notification key='needPreviewImage' default='You need to define a preview image.' />`
             }
             default {
                 condition = true
                 renderer = afx`
-                    <Jonnitto.PrettyEmbedVideo:Component.Video {...props} />
-                    <Jonnitto.PrettyEmbedVideo:Component.Backend setFirstTrackToDefault={props.setFirstTrackToDefault} />
+                    <Jonnitto.PrettyEmbed:Presentation.Video
+                        class={props.class}
+                        id={props.id}
+                        label={props.label}
+                        preview={props.preview}
+                        poster={props.poster}
+                        poster2x={props.poster2x}
+                        posterSrcset={props.posterSrcset}
+                        loadImageStrategy={props.loadImageStrategy}
+                        preload={props.preload}
+                        crossorigin={props.crossorigin}
+                        controls={props.controls}
+                        lightbox={props.lightbox}
+                        wrapper={props.wrapper}
+                        loop={props.loop}
+                        streaming={props.streaming}
+                        autoplay={props.autoplay}
+                        muted={props.muted}
+                        width={props.width}
+                        height={props.height}
+                        content={props.sources + props.tracks}
+                    />
                 `
             }
         }

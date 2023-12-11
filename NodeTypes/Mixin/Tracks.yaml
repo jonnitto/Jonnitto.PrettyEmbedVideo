@@ -1,0 +1,57 @@
+'Jonnitto.PrettyEmbedVideo:Mixin.Tracks':
+  properties:
+    setFirstTrackToDefault:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        help:
+          message: i18n
+        inspector:
+          group: captions
+          position: 10
+          hidden: 'ClientEval: node.properties.tracks.length === 0'
+    tracks:
+      type: repeatable
+      ui:
+        help:
+          message: i18n
+        inspector:
+          group: captions
+          position: 20
+          editorOptions:
+            # https://github.com/mireo91/RepeatableFields/issues/19
+            buttonAddLabel: +
+            properties:
+              asset:
+                type: 'Neos\Media\Domain\Model\Asset'
+                label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.asset
+                editorOptions:
+                  accept: 'text/vtt'
+              kind:
+                defaultValue: subtitles
+                label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.kind
+                editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+                editorOptions:
+                  allowEmpty: false
+                  values:
+                    subtitles:
+                      label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.kind.subtitles
+                    captions:
+                      label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.kind.captions
+                    descriptions:
+                      label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.kind.descriptions
+                    chapters:
+                      label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.kind.chapters
+                    metadata:
+                      label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.kind.metadata
+              label:
+                type: string
+                label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.label
+              srclang:
+                type: string
+                label: Jonnitto.PrettyEmbedVideo:NodeTypes.Mixin.Tracks:properties.tracks.srclang
+                validation:
+                  Neos.Neos/Validation/StringLengthValidator:
+                    minimum: 2
+                    maximum: 2
