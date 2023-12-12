@@ -146,6 +146,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
         renderer = Neos.Fusion:Case {
             @process.debug = Neos.Fusion:Debug.Console {
                 @if.debug = ${props.debug}
+                package = 'PrettyEmbedVideo'
                 props = ${props}
             }
             noVideoAndPoster {
