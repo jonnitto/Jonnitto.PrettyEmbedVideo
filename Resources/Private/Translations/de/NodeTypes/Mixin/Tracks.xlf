@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedVideo" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.setFirstTrackToDefault" xml:space="preserve">
+                <source>Set first caption as default</source>
+                <target>Erster Untertitel ist Standarduntertitel</target>
+            </trans-unit>
+            <trans-unit id="properties.setFirstTrackToDefault.ui.help.message" xml:space="preserve">
+                <source>If set, the first caption will be enabled unless the user's preferences indicate that another one is more appropriate.</source>
+                <target>Falls dies gesetzt ist, wird der erste Untertitel aktiviert, solange nicht die Benutzereinstellungen so gesetzt ist, das ein anderer Untertitel besser passt.</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.ui.help.message" xml:space="preserve">
+                <source>
+### Subtitles
+Subtitles provide translation of content that cannot be understood by the viewer. For example dialogue or text that is not English in an English language film. They may also contain additional content, usually extra background information. For example the text at the beginning of the Star Wars films, or the date, time, and location of a scene.
+
+### Captions
+Closed captions provide a transcription and possibly a translation of audio. It may include important non-verbal information such as music cues or sound effects. It may indicate the cue's source (e.g. music, text, character). **Suitable for users who are deaf or when the sound is muted.**
+
+### Descriptions
+Textual description of the video content. **Suitable for users who are blind or where the video cannot be seen.**
+
+### Chapters titles
+Chapter titles are intended to be used when the user is navigating the media resource.
+
+### Metadata
+Tracks used by scripts. Not visible to the user.</source>
+                <target>
+### Untertitel audiomediale Inhalte
+Untertitel beinhalten Inhaltsangaben welche vom Zuschauer nicht verstanden werden kann. Zum Beispiel ein Dialog oder Text in einem deutschsprachigen Film welcher aber nicht Deutsch ist. Sie können aber auch zusätlichen Inhalt beinhalten, meistens sind dies Hintergrundinformationen.
+
+### Untertitel visuelle Medieninhalte
+Untertitel visuelle Medieninhalte beinhalten eine Transkription and möglicherweise auch eine Übersetzung vom Ton. Es beinhaltet wichtige non-verbale Informationen wie Musik oder Soundeffekte. **Passend für taube Benutzer oder wenn der Ton ausgeschalten ist.**
+
+### Beschreibungen (descriptions)
+Textliche Beschreibung vom Inhalt des Videos. **Passend für blinde Benutzer oder wo das Video nicht gesehen werden kann**
+
+### Kapiteltitel
+Kapiteltitel sind für die Navigation innerhalb des Videos vorgesehen.
+
+### Metadata
+Diese können von Programmiercode verwendet werden. Sie sind nicht sichtbar für den Benutzer.</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.buttonAddLabel" xml:space="preserve">
+                <source>Add caption</source>
+                <target>Untertitel hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.asset" xml:space="preserve">
+                <source>File (.vtt only)</source>
+                <target>Datei (nur .vtt Dateien)</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.kind" xml:space="preserve">
+                <source>Type</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.kind.subtitles" xml:space="preserve">
+                <source>Subtitles</source>
+                <target>Untertitel audiomediale Inhalte</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.kind.captions" xml:space="preserve">
+                <source>Captions</source>
+                <target>Untertitel visuelle Medieninhalte</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.kind.descriptions" xml:space="preserve">
+                <source>Descriptions</source>
+                <target>Beschreibungen (descriptions)</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.kind.chapters" xml:space="preserve">
+                <source>Chapters titles</source>
+                <target>Kapiteltitel</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.kind.metadata" xml:space="preserve">
+                <source>Metadata</source>
+                <target>Metadata</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.label" xml:space="preserve">
+                <source>Label</source>
+                <target>Label</target>
+            </trans-unit>
+            <trans-unit id="properties.tracks.srclang" xml:space="preserve">
+                <source>Language</source>
+                <target>Sprache</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

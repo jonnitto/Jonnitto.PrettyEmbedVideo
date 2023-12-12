@@ -3,7 +3,7 @@
     'Neos.Neos:Content': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Groups': true
     'Jonnitto.PrettyEmbedVideo:Mixin.Sources': true
-    'Jonnitto.PrettyEmbedVideo:Collection.Track': true
+    'Jonnitto.PrettyEmbedVideo:Mixin.Tracks': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Title': true
