@@ -9,6 +9,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
         maximumWidth = ${PropTypes.integer}
         wrapper = ${PropTypes.anyOf(PropTypes.string, PropTypes.boolean)}
         loadImageStrategy = ${PropTypes.oneOf(['lazy', 'eager', null, false])}
+        imageformat = ${PropTypes.oneOf(['jpg', 'jpeg', 'gif', 'png', 'wbmp', 'xbm', 'webp', 'bmp'])}
         width = ${PropTypes.integer}
         height = ${PropTypes.integer}
         image = ${PropTypes.instanceOf('Neos\Media\Domain\Model\ImageInterface')}
@@ -82,7 +83,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     }
 
     // Internal
-    _posterThumbnail = ${Jonnitto.PrettyEmbedHelper.createThumbnail(this.image, this.maximumWidth)}
+    _posterThumbnail = ${Jonnitto.PrettyEmbedHelper.createThumbnail(this.image, this.maximumWidth, this.imageformat)}
     _posterThumbnail.@if.hasImage = ${this.image}
 
     renderer = Neos.Fusion:Component {
@@ -103,6 +104,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                         renderer = Neos.Neos:ImageUri {
                             asset = ${props.image}
                             async = ${props.async}
+                            format = ${props.imageformat}
                             maximumWidth = ${props.maximumWidth}
                         }
                     }
@@ -116,6 +118,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                     }
                     asset = ${props.image}
                     async = ${props.async}
+                    format = ${props.imageformat}
                     maximumWidth = ${props.maximumWidth * 2}
                 }
                 assets = Neos.Fusion:Loop {
