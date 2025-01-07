@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "jonnitto/prettyembedhelper": "^6.0 || dev-master",
+        "jonnitto/prettyembedhelper": "^6.6 || dev-master",
         "mireo91/repeatablefields": "^2.2.0"
     },
     "autoload": {
