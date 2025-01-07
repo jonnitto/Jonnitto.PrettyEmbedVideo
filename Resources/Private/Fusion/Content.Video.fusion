@@ -85,6 +85,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
     // Internal
     _posterThumbnail = ${Jonnitto.PrettyEmbedHelper.createThumbnail(this.image, this.maximumWidth, this.imageformat)}
     _posterThumbnail.@if.hasImage = ${this.image}
+    _autoplay = ${this.lightbox ? false : this.autoplay}
 
     renderer = Neos.Fusion:Component {
         @apply {
@@ -200,7 +201,7 @@ prototype(Jonnitto.PrettyEmbedVideo:Content.Video) < prototype(Jonnitto.PrettyEm
                         lightbox={props.lightbox}
                         wrapper={props.wrapper}
                         loop={props.loop}
-                        autoplay={props.autoplay}
+                        autoplay={props._autoplay}
                         muted={props.muted}
                         width={props.width}
                         height={props.height}
